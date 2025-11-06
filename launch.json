@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Zephyr QEMU",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Debug Server QEMU",
+            "program": "_out/zephyr/zephyr.elf",
+            "setupCommands": [
+                {
+                    "text": "-file-exec-and-symbols ${workspaceFolder}/_out/zephyr/zephyr.elf",
+                    "description": "Zephyr RTOS executable",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "-break-insert main",
+                    "description": "Set breakpoint at main",
+                    "ignoreFailures": false
+                }
+            ],
+            "request": "launch",
+            "type": "cppdbg",
+            // "stopAtEntry": true,
+            "stopAtConnect": true,
+            "environment": [],
+            "externalConsole": true,
+            "miDebuggerPath": "/opt/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "miDebuggerServerAddress": "localhost:1234"
+        }
+    ]
+}

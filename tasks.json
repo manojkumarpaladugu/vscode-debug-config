@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Debug Server QEMU",
+            "type": "shell",
+            "command": "west build -d _out -t debugserver_qemu",
+            "presentation": {
+                "close": true
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": {
+                    "regexp": "____"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".*west build.*debugserver_qemu.*",
+                    "endsPattern": ".*To exit from QEMU enter:.*"
+                }
+            }
+        }
+    ]
+}
