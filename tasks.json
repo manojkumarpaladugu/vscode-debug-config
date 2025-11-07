@@ -20,6 +20,12 @@
                     "endsPattern": ".*To exit from QEMU enter:.*"
                 }
             }
+        },
+        {
+            "label": "west flash",
+            "type": "shell",
+            "command": "west flash -d _out",
+            "problemMatcher": []
         }
     ]
 }

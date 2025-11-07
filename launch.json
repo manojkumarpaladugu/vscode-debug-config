@@ -26,6 +26,49 @@
             "externalConsole": true,
             "miDebuggerPath": "/opt/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
             "miDebuggerServerAddress": "localhost:1234"
+        },
+        {
+            "name": "Zephyr STM32G4",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "west flash",
+            "executable": "_out/zephyr/zephyr.elf",
+            "symbolFiles": [
+                "_out/zephyr/zephyr.elf"
+            ],
+            "request": "launch",
+            "type": "cortex-debug",
+            // "breakAfterReset": true,
+            "runToEntryPoint": "main",
+            "armToolchainPath": "/opt/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin",
+            "toolchainPrefix": "arm-zephyr-eabi",
+            "showDevDebugOutput": "raw",
+            "rtos": "Zephyr",
+            "interface": "swd",
+            "servertype": "openocd",
+            "configFiles": [
+                "interface/stlink-v2.cfg",
+                "target/stm32g4x.cfg"
+            ]
+        },
+        {
+            "name": "Baremetal STM32G4",
+            "cwd": "${workspaceFolder}",
+            "executable": "_out/G491RE/NucleoFirmware.elf",
+            "symbolFiles": [
+                "_out/G491RE/NucleoFirmware.elf"
+            ],
+            "request": "launch",
+            "type": "cortex-debug",
+            // "breakAfterReset": true,
+            "runToEntryPoint": "main",
+            "gdbPath": "/opt/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "showDevDebugOutput": "raw",
+            "interface": "swd",
+            "servertype": "openocd",
+            "configFiles": [
+                "interface/stlink-v2.cfg",
+                "target/stm32g4x.cfg"
+            ]
         }
     ]
 }
